@@ -1,0 +1,19 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "/r7cjQsFAPHwW1vUgbP0/WFZVPE=",
+			"path": "github.com/spf13/cobra",
+			"revision": "4c05eb1145f16d0e6bb4a3e1b6d769f4713cb41f",
+			"revisionTime": "2016-04-03T14:08:35Z"
+		},
+		{
+			"checksumSHA1": "frhqjUscvFwHZ7XpfuJgPPDKxFw=",
+			"path": "github.com/spf13/pflag",
+			"revision": "8f6a28b0916586e7f22fe931ae2fcfc380b1c0e6",
+			"revisionTime": "2016-04-13T14:43:53Z"
+		}
+	],
+	"rootPath": "github.com/Herve-M/happiness-bot"
+}

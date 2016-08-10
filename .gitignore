@@ -23,5 +23,9 @@ _testmain.go
 *.test
 *.prof
 
+# Go vendor directories
+vendor/**/
+!vendor/vendor.json
+
 .idea/
 /happiness-bot
