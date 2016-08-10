@@ -2,6 +2,9 @@ package core
 
 // Flags holds the CLI configuration values and flags
 type Flags struct {
+	Verbose      bool
+	LogLevel     bool
+	SlackWebHook string
 }
 
 // initConfig Used to get the default configuration file (default.json) and the possible
