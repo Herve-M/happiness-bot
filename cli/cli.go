@@ -10,11 +10,13 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var rootFlag = &core.Flags{}
 var rootCmd = &cobra.Command{
 	Use:   "happiness-bot",
 	Short: "Slack happiness-bot for fun.",
 	Long:  "",
+	PreRunE: func(cmd *cobra.Command, args []string) error {
+      return core.ReadConfig()
+  },
   Run: func(cmd *cobra.Command, args []string) {
 	},
 }
@@ -23,6 +25,9 @@ var initCmd = &cobra.Command{
 	Use: "init",
 	Short: "initialize happiness-bot",
 	Long:  "",
+	PreRunE: func(cmd *cobra.Command, args []string) error {
+      return core.ReadConfig()
+  },
   Run: func(cmd *cobra.Command, args []string) {
 		hcmd.InitCmd()
 	},
@@ -32,6 +37,9 @@ var runCmd = &cobra.Command{
 	Use: "run",
 	Short: "run happiness-bot",
 	Long:  "",
+	PreRunE: func(cmd *cobra.Command, args []string) error {
+      return core.ReadConfig()
+  },
   Run: func(cmd *cobra.Command, args []string) {
 		hcmd.RunCmd()
 	},
@@ -42,13 +50,15 @@ var testCmd = &cobra.Command{
 	Use: "test",
 	Short: "test happiness-bot",
 	Long:  "",
+	PreRunE: func(cmd *cobra.Command, args []string) error {
+      return core.ReadConfig()
+  },
   Run: func(cmd *cobra.Command, args []string) {
 		hcmd.TestCmd(testFlag)
 	},
 }
 
 func init() {
-	rootCmd.PersistentFlags().BoolVarP(&rootFlag.Verbose, "verbose", "v", false, "verbose output")
 	testCmd.PersistentFlags().StringVar(&testFlag.Message, "msg", "Hi\n, I'am happiness-bot, a slave of Matthieu and Hervé with only one goal: to bring you happiness every morning!", "Message")
 	testCmd.PersistentFlags().StringVar(&testFlag.BotName, "name", "happiness-bot", "Bot Name")
 	testCmd.PersistentFlags().StringVar(&testFlag.BotIcon, "icon", ":gift_heart:", "Bot Icon")
