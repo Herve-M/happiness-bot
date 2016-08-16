@@ -1,0 +1,7 @@
+verbose: false
+loglevel: INFO
+slack:
+  url: ""
+  botname: "happiness-bot"
+  boticon: ":gift_heart:"
+  target: "#channel"
